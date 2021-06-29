@@ -2,7 +2,7 @@
 
 Fork this repo. Build a simple full stack app using frameworks of your choice. Submit your results as a pull request
 to this repo with instruction on how to build/run it or, even better, a link to where we can see it already
-running/deployed.
+running/deployed. Alternatively, feel free to send us an archive file of the work.
 
 There is probably more here than can be finished in two hours. Don't worry about completeness. Focus on what's 
 important and interesting to you.   
