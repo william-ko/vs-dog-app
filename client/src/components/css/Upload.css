@@ -1,0 +1,22 @@
+textarea, button {
+    margin-top: 18px;
+}
+
+h1 {
+    margin-bottom: 50px;
+}
+
+.alert-message {
+    color: black;
+    margin-top: 100px;
+    justify-content: center;
+    width: 70%;
+}
+
+button {
+    width: 20%;
+}
+
+.choose-file {
+    cursor: pointer; 
+}

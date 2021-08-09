@@ -1,0 +1,23 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "sourceMap": true,
+    "outDir": "./dist",
+    "rootDir": ".",
+    "resolveJsonModule": true,
+    "target": "es6",
+    "module": "commonjs",
+    "lib": ["es2016", "dom"],
+    "strict": true,
+    "strictNullChecks": true,
+    "noImplicitThis": true,
+    "noImplicitReturns": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "allowJs" : true
+  },
+  "include": [
+    "./src/**/*"
+  ],
+  "types": [ "typePatches" ]
+}

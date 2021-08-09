@@ -1,0 +1,70 @@
+version: '3.7'
+services:
+
+  nginx:
+    restart: always
+    container_name: dog-app-nginx-proxy
+    build:
+      context: .
+      dockerfile: ./nginx/Dockerfile
+    ports:
+      - 80:80
+    depends_on: 
+      - dog-app-ui
+      - dog-app-api
+    networks: 
+      - dog-app-network
+
+  dog-app-db:
+    image: "postgres:13.3-alpine"
+    container_name: dog-app-db
+    restart: always
+    volumes:
+      - dog-app-db:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_DATABASE: ${PGDATABASE}
+      POSTGRES_USER: ${PGUSER}
+      POSTGRES_PASSWORD: ${PGPASSWORD}
+    networks: 
+      - dog-app-network
+
+  dog-app-api:
+    build: 
+      context: .
+      dockerfile: ./server/Dockerfile
+    volumes: 
+      - dog-app-api:/home/node/app/server/src
+    container_name: dog-app-api
+    ports:
+      - 8081:8081
+    depends_on:
+      - dog-app-db
+    networks: 
+      - dog-app-network
+
+  dog-app-ui:
+    build: 
+      context: .
+      dockerfile: ./client/Dockerfile
+      args:
+        REACT_APP_DOG_API_URL: ${REACT_APP_DOG_API_URL}
+    container_name: dog-app-ui
+    volumes: 
+      - dog-app-ui:/home/node/app/client/src
+    ports:
+      - 3000:3000
+    depends_on:
+      - dog-app-api
+    networks: 
+      - dog-app-network
+
+volumes:
+  dog-app-db:
+  dog-app-api:
+  dog-app-ui:
+
+networks: 
+  dog-app-network:
+    driver: bridge

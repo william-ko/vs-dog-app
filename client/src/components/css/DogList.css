@@ -1,0 +1,12 @@
+.card-img {
+    width: 250px;
+    height: 200px;
+    margin: 15px;
+    padding: 2px;
+    border-radius: 50%;
+    box-shadow: 5px 1px 10px .5px grey;
+}
+
+.all-cards {
+    padding: 50px;
+}
