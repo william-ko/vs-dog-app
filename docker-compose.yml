@@ -1,9 +1,9 @@
 version: '3.7'
 services:
 
-  nginx:
+  dog-app-nginx:
     restart: always
-    container_name: dog-app-nginx-proxy
+    container_name: dog-app-nginx
     build:
       context: .
       dockerfile: ./nginx/Dockerfile
