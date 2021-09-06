@@ -21,10 +21,11 @@ services:
     restart: always
     volumes:
       - dog-app-db:/var/lib/postgresql/data
+      - ./sql/init.sql:/docker-entrypoint-initdb.d/init.sql
     ports:
       - 5432:5432
     environment:
-      POSTGRES_DATABASE: ${PGDATABASE}
+      POSTGRES_DB: ${PGDATABASE}
       POSTGRES_USER: ${PGUSER}
       POSTGRES_PASSWORD: ${PGPASSWORD}
     networks: 

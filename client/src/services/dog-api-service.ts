@@ -22,8 +22,7 @@ export const getAllDogs = async (): Promise<IDog[]> => {
         return dogs.map((dog: IDog) => {
             return encodeImage(dog);
         });
-    } catch (error) {
-        console.log(error);
+    } catch (error: any) {
         throw new Error(error.message);
     }
 }
@@ -45,8 +44,7 @@ export const getDogById = async (id: string): Promise<IDog[]> => {
         return dogs.map((dog: IDog) => {
             return encodeImage(dog);
         });
-    } catch (error) {
-        console.log(error);
+    } catch (error: any) {
         throw new Error(error.message);
     }
 }
@@ -70,8 +68,7 @@ export const createDog = async (dog: IDog): Promise<IDog[]> => {
         }
 
         return dogs;
-    } catch (error) {
-        console.log(error);
+    } catch (error: any) {
         throw new Error(error.message);
     }
 }
@@ -95,8 +92,7 @@ export const updateDog = async (dog: IDog): Promise<IDog[]> => {
         }
 
         return dogs;
-    } catch (error) {
-        console.log(error);
+    } catch (error: any) {
         throw new Error(error.message);
     }
 }
@@ -111,8 +107,7 @@ export const deleteDog = async (id: string): Promise<boolean> => {
         }
 
         return true;
-    } catch (error) {
-        console.log(error);
+    } catch (error: any) {
         throw new Error(error.message);
     }
 }

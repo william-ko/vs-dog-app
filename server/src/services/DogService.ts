@@ -39,9 +39,9 @@ export class DogService {
             client.release();
     
             return dogs
-        } catch (error) {
+        } catch (error: any) {
             client.release();
-            throw new Error(error);
+            throw new Error(error.message);
         }
     }
 
@@ -56,8 +56,8 @@ export class DogService {
             const result = await client.query(sql);
 
             return result.rows;
-        } catch (error) {
-            throw new Error(error);
+        } catch (error: any) {
+            throw new Error(error.message);
         }
     }
 
@@ -77,8 +77,8 @@ export class DogService {
             const result = await client.query(query);
 
             return result.rows;
-        } catch (error) {
-            throw new Error(error);
+        } catch (error: any) {
+            throw new Error(error.message);
         } 
     }
 
@@ -94,8 +94,8 @@ export class DogService {
             const result = await client.query(sql);
 
             return result.rows;
-        } catch (error) {
-            throw new Error(error);
+        } catch (error: any) {
+            throw new Error(error.message);
         }
     }
 
@@ -115,8 +115,8 @@ export class DogService {
             const result = await client.query(query);
 
             return result.rows;
-        } catch (error) {
-            throw new Error(error);
+        } catch (error: any) {
+            throw new Error(error.message);
         }
     }
 
@@ -132,8 +132,8 @@ export class DogService {
             const result = await client.query(sql);
 
             return result.rows;
-        } catch (error) {
-            throw new Error(error);
+        } catch (error: any) {
+            throw new Error(error.message);
         }
     }
 }

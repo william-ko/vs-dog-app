@@ -28,7 +28,7 @@ export class DogsController {
             }
 
             res.send(dogs);
-        } catch (error) {
+        } catch (error: any) {
             res.status(500).send(error.message);
         }
     }
@@ -48,7 +48,7 @@ export class DogsController {
             }
 
             res.send(dogs);
-        } catch (error) {
+        } catch (error: any) {
             res.status(500).send(error.message);
         }
     }
@@ -70,7 +70,7 @@ export class DogsController {
             const dogs: IDog[] = await this.dogService.executeQuery(HttpMethod.POST, { dog });
 
             res.send(dogs);
-        } catch (error) {
+        } catch (error: any) {
             res.status(500).send(error.message);
         }
     }
@@ -93,7 +93,7 @@ export class DogsController {
             const dogs: IDog[] = await this.dogService.executeQuery(HttpMethod.PUT, { dog });
 
             res.send(dogs);
-        } catch (error) {
+        } catch (error: any) {
             res.status(500).send(error.message);
         }
     }
@@ -108,7 +108,7 @@ export class DogsController {
         try {
             const dogs: IDog[] = await this.dogService.executeQuery(HttpMethod.DELETE, { id:req.params.id });
             res.send(dogs);
-        } catch (error) {
+        } catch (error: any) {
             res.status(500).send(error.message);
         }
     }
