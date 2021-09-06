@@ -31,7 +31,7 @@ Create environment file (wouldn't normally include passwords and what not):
 
 Export the variables for Docker compose:
 <br>
-`export PGUSER=postgres PGHOST=dog-app-db PGPASSWORD=password PGDATABASE=vetspire-dogs-database REACT_APP_DOG_API_URL=http://127.0.0.1:80 PORT=8081`
+`export PGUSER=postgres PGHOST=dog-app-db PGPASSWORD=postgres PGDATABASE=vetspire-dogs-database REACT_APP_DOG_API_URL=http://127.0.0.1:80 PORT=8081`
 <br>
 
 Build the images and run the containers:
@@ -41,7 +41,7 @@ Build the images and run the containers:
 
 Open up the application in your browser at `http://localhost:3000`
 
-Stop containers and removes containers, networks, volumes, and images:
+Stop containers:
 <br>
 `docker-compose down`
 
